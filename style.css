@@ -1,0 +1,62 @@
+*{
+    font-family: sans-serif;
+    background-color: aqua;
+}
+body{
+    background-color: aqua;
+    color: #000;
+}
+.games{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    gap: 20px;
+}
+.pic{
+    position: relative;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 3px lightgrey;
+}
+.pic img{
+    width: 100%;
+    height: auto;
+    border:1px solid grey;
+    border-radius: 10px;
+}
+.pic img:hover{
+    border:3px solid rgb(44, 44, 44);
+}
+.pic::before{
+    content: "Game stacks";
+    position: absolute;
+    bottom: -50px;
+    left: 60%;
+    width: 100%;
+    color: white;
+    transform: translate(-50%);
+    font-style: normal;
+    font-size: 24px;
+    font-weight: bold;
+    transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;  
+    opacity: 0; 
+}
+.pic::after{
+    content: "";
+    position: relative;
+    width: 100%;
+    bottom: 10px;
+    left: 60%;
+    border-radius: 10px;
+    transition: height 0.3s ease;
+    opacity: 0;
+    
+}
+.pic:hover::after{
+    height: 100%;
+}
+.pic:hover::before{
+    bottom: -25px;
+    opacity: 1;
+}
